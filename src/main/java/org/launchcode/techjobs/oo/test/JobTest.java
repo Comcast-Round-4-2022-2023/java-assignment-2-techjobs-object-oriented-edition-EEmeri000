@@ -56,12 +56,22 @@ public class JobTest {
 
         String jobString = job.toString();
 
-        assertTrue(jobString.contains("ID: "));
-        assertTrue(jobString.contains("Name: Web Developer"));
-        assertTrue(jobString.contains("Employer: LaunchCode"));
-        assertTrue(jobString.contains("Location: StL"));
-        assertTrue(jobString.contains("Position Type: Back-end developer"));
-        assertTrue(jobString.contains("Core Competency: Java"));
+//        assertTrue(jobString.contains("ID: "));
+//        assertTrue(jobString.contains("Name: Web Developer"));
+//        assertTrue(jobString.contains("Employer: LaunchCode"));
+//        assertTrue(jobString.contains("Location: StL"));
+//        assertTrue(jobString.contains("Position Type: Back-end developer"));
+//        assertTrue(jobString.contains("Core Competency: Java"));
+        String expected = String.format(
+                "\nID: %d%nName: %s%nEmployer: %s%nLocation: %s%nPosition Type: %s%nCore Competency: %s%n",
+                job.getId(),
+                job.getName(),
+                job.getEmployer().toString(),
+                job.getLocation().toString(),
+                job.getPositionType().toString(),
+                job.getCoreCompetency().toString()
+        );
+        assertEquals(expected, jobString);
     }
 
 }

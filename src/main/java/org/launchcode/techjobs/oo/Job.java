@@ -93,12 +93,18 @@ public class Job {
 
     @Override
     public String toString() {
+        String nameValue = name.isEmpty() ? "Data not available" : name;
+        String employerValue = employer.toString().isEmpty() ? "Data not available" : employer.toString();
+        String locationValue = location.toString().isEmpty() ? "Data not available" : location.toString();
+        String positionTypeValue = positionType.toString().isEmpty() ? "Data not available" : positionType.toString();
+        String coreCompetencyValue = coreCompetency.toString().isEmpty() ? "Data not available" : coreCompetency.toString();
+
         return  "\nID: " + id +
-                "\nName: " + name +
-                "\nEmployer: " + employer +
-                "\nLocation: " + location +
-                "\nPosition Type: " + positionType +
-                "\nCore Competency: " + coreCompetency+
+                "\nName: " + nameValue +
+                "\nEmployer: " + employerValue +
+                "\nLocation: " + locationValue +
+                "\nPosition Type: " + positionTypeValue +
+                "\nCore Competency: " + coreCompetencyValue +
                 "\n";
     }
 }

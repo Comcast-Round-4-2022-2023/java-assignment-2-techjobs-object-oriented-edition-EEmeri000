@@ -62,6 +62,24 @@ public class JobTest {
 //        assertTrue(jobString.contains("Location: StL"));
 //        assertTrue(jobString.contains("Position Type: Back-end developer"));
 //        assertTrue(jobString.contains("Core Competency: Java"));
+//        These Assertions do not pass all relevant tests.
+        String expected = String.format(
+                "\nID: %d%nName: %s%nEmployer: %s%nLocation: %s%nPosition Type: %s%nCore Competency: %s%n",
+                job.getId(),
+                job.getName(),
+                job.getEmployer().toString(),
+                job.getLocation().toString(),
+                job.getPositionType().toString(),
+                job.getCoreCompetency().toString()
+        );
+        assertEquals(expected, jobString);
+    }
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job job = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
+
+        String jobString = job.toString();
+
         String expected = String.format(
                 "\nID: %d%nName: %s%nEmployer: %s%nLocation: %s%nPosition Type: %s%nCore Competency: %s%n",
                 job.getId(),

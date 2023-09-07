@@ -84,10 +84,10 @@ public class JobTest {
                 "\nID: %d%nName: %s%nEmployer: %s%nLocation: %s%nPosition Type: %s%nCore Competency: %s%n",
                 job.getId(),
                 job.getName(),
-                job.getEmployer().toString(),
-                job.getLocation().toString(),
-                job.getPositionType().toString(),
-                job.getCoreCompetency().toString()
+                (job.getEmployer().toString().isEmpty()) ? "Data not available" : job.getEmployer().toString(),
+                (job.getLocation().toString().isEmpty()) ? "Data not available" : job.getLocation().toString(),
+                (job.getPositionType().toString().isEmpty()) ? "Data not available" : job.getPositionType().toString(),
+                (job.getCoreCompetency().toString().isEmpty()) ? "Data not available" : job.getCoreCompetency().toString()
         );
         assertEquals(expected, jobString);
     }
